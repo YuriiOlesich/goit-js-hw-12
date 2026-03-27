@@ -7,12 +7,160 @@
 /* Common styles */
 @import url('./reset.css');
 @import url('./base.css');
-@import url('./container.css');
-@import url('./animations.css');
 
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #fafafa;
+  color: #2e2f42;
+  margin: 0;
+}
+
+/* Форма */
+.form {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 36px;
+}
+
+.form input {
+  width: 272px;
+  height: 40px;
+  padding: 8px 16px;
+
+  border: 1px solid #808080;
+  border-radius: 4px;
+
+  font-size: 16px;
+}
+
+.form input:hover {
+  border-color: #000;
+}
+
+.form input:focus {
+  outline: none;
+  border-color: #4e75ff;
+}
+
+.form button {
+  width: 91px;
+  height: 40px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #4e75ff;
+  color: #fff;
+
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background: #6c8cff;
+}
+
+/* Галерея */
+.gallery {
+  max-width: 1128px;
+  margin: 32px auto;
+  padding: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+
+  list-style: none;
+}
+
+/* Картка */
+.gallery-item {
+  width: calc((100% - 48px) / 3);
+
+  border: 1px solid #808080;
+  border-radius: 4px;
+  overflow: hidden;
+
+  background: #fff;
+}
+
+/* Зображення */
+.gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Інфо блок */
+.info {
+  display: flex;
+  justify-content: space-around;
+  padding: 4px 0;
+
+  font-size: 12px;
+  gap: 8px;
+}
+
+.info p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+/* Назви */
+.info .label {
+  font-weight: 600;
+  font-size: 12px;
+}
+
+/* Значення */
+.info span:last-child {
+  font-size: 12px;
+}
+
+/* .info b {
+  font-weight: 600;
+} */
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #cfcfcf;
+  border-top-color: #4e75ff;
+  border-radius: 50%;
+
+  margin: 20px auto;
+
+  animation: spin 1s linear infinite;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* load more */
+
+.load-more {
+  display: none;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.load-more.visible {
+  display: block;
+}
